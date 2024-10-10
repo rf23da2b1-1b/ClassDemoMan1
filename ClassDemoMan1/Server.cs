@@ -57,9 +57,9 @@ namespace ClassDemoMan1
         private void DoServerUdenJson(StreamReader sr, StreamWriter sw)
         {
             // læser linje 1 fra klient
-            string cmd = sr.ReadLine();
+            string cmd = sr.ReadLine().ToLower();
             Console.WriteLine("Modtaget: " + cmd);
-            if (!(cmd == "Random" || cmd == "Add" || cmd == "Subtract" ))
+            if (!(cmd == "random" || cmd == "add" || cmd == "subtract" ))
             {
                 // fejl
                 sw.WriteLine("Fejl understøtter ikke " + cmd);
@@ -84,15 +84,15 @@ namespace ClassDemoMan1
                 int result = 0;
                 switch (cmd)
                 {
-                    case "Random":
+                    case "random":
                         {
-                            result = rnd.Next(tal1,tal2); break;
+                            result = rnd.Next(tal1,tal2+1); break;
                         }
-                    case "Add":
+                    case "add":
                         {
                             result = tal1 + tal2; break;
                         }
-                    case "Subtract":
+                    case "subtract":
                         {
                             result = tal1 - tal2; break;
                         }

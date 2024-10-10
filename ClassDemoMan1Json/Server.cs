@@ -78,7 +78,7 @@ namespace ClassDemoMan1Json
                 {
                     case "Random":
                         {
-                            resp.Result = rnd.Next(req.Tal1, req.Tal2);
+                            resp.Result = rnd.Next(req.Tal1, req.Tal2 + 1);
                             resp.Ok = true;
                             break;
                         }
